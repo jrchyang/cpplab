@@ -27,6 +27,7 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 
 option(ALGO "Build the algo directory" ON)
 option(BOOST "Build the boost directory" ON)
+option(SYNTAX "Build the syntax directory" ON)
 
 if(ALGO)
   add_subdirectory(algo)
@@ -34,4 +35,8 @@ endif()
 
 if(BOOST)
   add_subdirectory(boost)
+endif()
+
+if(SYNTAX)
+  add_subdirectory(syntax)
 endif()
