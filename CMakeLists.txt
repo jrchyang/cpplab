@@ -25,5 +25,13 @@ endif()
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-add_subdirectory(algo)
-add_subdirectory(boost)
+option(ALGO "Build the algo directory" ON)
+option(BOOST "Build the boost directory" ON)
+
+if(ALGO)
+  add_subdirectory(algo)
+endif()
+
+if(BOOST)
+  add_subdirectory(boost)
+endif()
