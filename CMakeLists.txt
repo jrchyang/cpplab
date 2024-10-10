@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.5)
 
 project(cpplab
   VERSION 0.0.1
@@ -28,6 +28,7 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 option(ALGO "Build the algo directory" ON)
 option(BOOST "Build the boost directory" ON)
 option(SYNTAX "Build the syntax directory" ON)
+option(SEASTAR "Build the seastar directory" ON)
 
 if(ALGO)
   add_subdirectory(algo)
@@ -39,4 +40,8 @@ endif()
 
 if(SYNTAX)
   add_subdirectory(syntax)
+endif()
+
+if(SEASTAR)
+  add_subdirectory(seastar)
 endif()
