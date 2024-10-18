@@ -5,14 +5,27 @@
 #include <iostream>
 #include <stdexcept>
 
-seastar::future<> f() {
-	std::cout << "Hello world\n";
-	std::cout << seastar::smp::count << "\n";
-	std::cout << "Sleeping... " << std::flush;
+seastar::future<int> slow() {
 	using namespace std::chrono_literals;
-	seastar::sleep(200ms).then([] { std::cout << "200ms " << std::flush; });
-	seastar::sleep(100ms).then([] { std::cout << "100ms " << std::flush; });
-	return seastar::sleep(1s).then([] { std::cout << "Done.\n"; });
+	return seastar::sleep(100ms).then([] { return 3; });
+}
+
+seastar::future<int> fast() {
+	return seastar::make_ready_future<int>(3);
+}
+
+/*
+seastar::future<> f() {
+	return slow().then([] (int val) {
+		std::cout << "Got " << val << "\n";
+	});
+}
+*/
+
+seastar::future<> f() {
+	return fast().then([] (int val) {
+		std::cout << "Got " << val << "\n";
+	});
 }
 
 int main(int argc, char** argv) {
