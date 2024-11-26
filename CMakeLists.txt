@@ -51,3 +51,8 @@ option(SPDLOG "Build the spdlog directory" ON)
 if(SPDLOG)
   add_subdirectory(spdlog)
 endif()
+
+option(STL "Build the stl directory" ON)
+if(STL)
+  add_subdirectory(stl)
+endif()

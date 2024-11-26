@@ -1,0 +1,1 @@
+add_executable(stl_helloworld stl_helloworld.cc)
