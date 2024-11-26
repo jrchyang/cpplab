@@ -16,6 +16,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/modules/")
 
 if(NOT CMAKE_BUILD_TYPE AND EXISTS "${CMAKE_SOURCE_DIR}/.git")
   set(default_build_type "Debug")
@@ -45,3 +46,5 @@ endif()
 if(SEASTAR)
   add_subdirectory(seastar)
 endif()
+
+add_subdirectory(spdlog)
