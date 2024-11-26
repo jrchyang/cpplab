@@ -94,12 +94,16 @@ if(BOOST)
   add_subdirectory(boost)
 endif()
 
-option(SEASTAR "Build the seastar directory" OFF)
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+
+option(SEASTAR "Build the seastar directory" ON)
 if(SEASTAR)
   add_subdirectory(seastar)
 endif()
 
-option(SPDLOG "Build the spdlog directory" OFF)
+option(SPDLOG "Build the spdlog directory" ON)
 if(SPDLOG)
   add_subdirectory(spdlog)
+endif()
+
 endif()
