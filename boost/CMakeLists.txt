@@ -1,1 +1,1 @@
-add_executable(statechart statechart.cpp)
+add_executable(statechart statechart.cc)

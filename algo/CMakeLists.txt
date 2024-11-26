@@ -1,1 +1,1 @@
-add_executable(lru lru.cpp)
+add_executable(lru lru.cc)

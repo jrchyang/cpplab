@@ -26,25 +26,28 @@ endif()
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-option(ALGO "Build the algo directory" ON)
-option(BOOST "Build the boost directory" ON)
-option(SYNTAX "Build the syntax directory" ON)
-option(SEASTAR "Build the seastar directory" ON)
 
+option(ALGO "Build the algo directory" ON)
 if(ALGO)
   add_subdirectory(algo)
 endif()
 
+option(BOOST "Build the boost directory" ON)
 if(BOOST)
   add_subdirectory(boost)
 endif()
 
+option(SYNTAX "Build the syntax directory" ON)
 if(SYNTAX)
   add_subdirectory(syntax)
 endif()
 
+option(SEASTAR "Build the seastar directory" ON)
 if(SEASTAR)
   add_subdirectory(seastar)
 endif()
 
-add_subdirectory(spdlog)
+option(SPDLOG "Build the spdlog directory" ON)
+if(SPDLOG)
+  add_subdirectory(spdlog)
+endif()
