@@ -26,6 +26,9 @@ endif()
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
+# fmt
+find_package(fmt 6.0.0 QUIET)
+
 # Boost
 option(WITH_SYSTEM_BOOST "require and build with system Boost" ON)
 

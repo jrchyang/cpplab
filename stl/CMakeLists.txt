@@ -1,1 +1,5 @@
 add_executable(stl_helloworld stl_helloworld.cc)
+add_executable(stl_student stl_student.cc)
+target_link_libraries(stl_student PRIVATE fmt::fmt)
+add_executable(stl_string stl_string.cc)
+add_executable(stl_vector stl_vector.cc)
