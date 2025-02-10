@@ -1,1 +1,4 @@
-add_executable(lru lru.cc)
+add_executable(datastruct_lru datastruct_lru.cc)
+add_executable(greedy_cookies greedy_cookies.cc)
+add_executable(greedy_candies greedy_candies.cc)
+add_executable(greedy_internal_overlap greedy_internal_overlap.cc)
