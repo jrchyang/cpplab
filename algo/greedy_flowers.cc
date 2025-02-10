@@ -4,38 +4,57 @@
 using namespace std;
 
 bool can_place_flowers(vector<int>& flowerbed, int n) {
-    int i = 0;
+    int size = flowerbed.size();
     int prev = -1;
     int total = 0;
-    int size = flowerbed.size();
 
-    if (size == 1) {
-        return (flowerbed[0] == 0 ? 1 : 0) >= n;
+    for (int i = 0; i < size; ++i) {
+        if (flowerbed[i] == 1) {
+            if (prev == -1) {
+                total += i / 2;
+            } else {
+                total += (i - prev - 2) / 2;
+            }
+
+            prev = i;
+        }
     }
 
-    for (i = 0; i < flowerbed.size(); ++i) {
-        if (flowerbed[i] == 0) {
-            continue;
-        }
-
-        if (prev == -1) {
-            total += i < 2 ? 0 : (i / 2);
-        } else {
-            int cnt = i - prev - 1;
-            total += cnt <= 2 ? 0 : ((cnt - 1) / 2);
-        }
-
-        prev = i;
-    }
-
-    if (prev != size - 1) {
-        if (prev == -1) {
-            total += (i + 1) / 2;
-        } else {
-            int cnt = i - prev - 1;
-            total += cnt < 2 ? 0 : (cnt / 2);
-        }
+    if (prev == -1) {
+        total += (size + 1) / 2;
+    } else {
+        total += (size - prev - 1) / 2;
     }
 
     return total >= n;
+}
+
+int main() {
+    {
+        vector<int> flowerbed = {1, 0, 0, 0, 1};
+        int n = 1;
+        cout << "result is " << (can_place_flowers(flowerbed, n) == true ? "true" : "false") << endl;
+    }
+    {
+        vector<int> flowerbed = {1, 0, 0, 0, 1};
+        int n = 2;
+        cout << "result is " << (can_place_flowers(flowerbed, n) == true ? "true" : "false") << endl;
+    }
+    {
+        vector<int> flowerbed = {0, 0, 0};
+        int n = 2;
+        cout << "result is " << (can_place_flowers(flowerbed, n) == true ? "true" : "false") << endl;
+    }
+    {
+        vector<int> flowerbed = {1, 0, 1, 0, 0};
+        int n = 1;
+        cout << "result is " << (can_place_flowers(flowerbed, n) == true ? "true" : "false") << endl;
+    }
+    {
+        vector<int> flowerbed = {1, 0, 1, 0, 0};
+        int n = 2;
+        cout << "result is " << (can_place_flowers(flowerbed, n) == true ? "true" : "false") << endl;
+    }
+
+    return 0;
 }
