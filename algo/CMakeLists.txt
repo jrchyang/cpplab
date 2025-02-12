@@ -1,2 +1,3 @@
 add_subdirectory(greedy)
+add_subdirectory(twopointer)
 add_subdirectory(datastruct)

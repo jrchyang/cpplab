@@ -1,0 +1,3 @@
+add_executable(twopointer_two_sum twopointer_two_sum.cc)
+add_executable(twopointer_merge_two_sarr twopointer_merge_two_sarr.cc)
+add_executable(twopointer_listcycle twopointer_listcycle.cc)
