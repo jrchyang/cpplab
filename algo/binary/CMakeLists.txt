@@ -1,0 +1,3 @@
+add_executable(binary_sqrt binary_sqrt.cc)
+add_executable(binary_search_range binary_search_range.cc)
+add_executable(binary_search_rotated_sorted_array binary_search_rotated_sorted_array.cc)
