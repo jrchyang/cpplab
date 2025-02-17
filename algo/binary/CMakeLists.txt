@@ -1,3 +1,6 @@
 add_executable(binary_sqrt binary_sqrt.cc)
 add_executable(binary_search_range binary_search_range.cc)
 add_executable(binary_search_rotated_sorted_array binary_search_rotated_sorted_array.cc)
+add_executable(binary_search_min_rotated_sorted_array binary_search_min_rotated_sorted_array.cc)
+add_executable(binary_single_non_dup binary_single_non_dup.cc)
+add_executable(binary_median_two_sorted_array binary_median_two_sorted_array.cc)
