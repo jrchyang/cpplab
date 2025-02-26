@@ -21,5 +21,10 @@ int median_two_sorted_arrays(vector<int>& nums1, vector<int>& nums2) {
 }
 #else
 int two_pointer(vector<int>& nums1, vector<int>& nums2) {
+    return 0;
 }
 #endif
+
+int main() {
+    return 0;
+}
