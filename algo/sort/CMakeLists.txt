@@ -1,0 +1,1 @@
+add_executable(sort_quick sort_quick.cc)
